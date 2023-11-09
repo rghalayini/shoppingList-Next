@@ -51,7 +51,8 @@ type Item = {
 
 export async function getServerSideProps() {
   try {
-    let response = await fetch('http://localhost:3000/api/getItems');
+    let response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL }/api/getItems`);
+
     let items = await response.json();
 
     return {
@@ -71,7 +72,7 @@ export default function Items(props: Props) {
   const deleteItem = async (itemId: string) => {
     try {
       let response = await fetch(
-        "http://localhost:3000/api/deleteItem?id=" + itemId,
+        `${process.env.NEXT_PUBLIC_BASE_URL }/api/deleteItem?id=${itemId}`,
         {
           method: "POST",
           headers: {
@@ -93,7 +94,7 @@ export default function Items(props: Props) {
     //e.preventDefault();
     if (itemName) {
       try {
-        let response = await fetch("http://localhost:3000/api/addItem", {
+        let response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL }/api/addItem`, {
           method: "POST",
           body: JSON.stringify({
             itemName,

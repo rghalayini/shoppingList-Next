@@ -28,6 +28,7 @@ cp .env.local.example .env.local
 Set each variable on `.env.local`:
 
 - `MONGODB_URI` - Your MongoDB connection string. If you are using [MongoDB Atlas](https://mongodb.com/atlas) you can find this by clicking the "Connect" button for your cluster. Make sure you do not have special characters in the password otherwise it won't work.
+- `NEXT_PUBLIC_BASE_URL` - This is to remove the dependency on the localhost URL in the getServerSideProps function, because we should use relative paths or absolute URLs instead. In vercel, replace this with the url of your site. 
 
 ### Run Next.js in development mode
 
