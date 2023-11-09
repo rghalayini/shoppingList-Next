@@ -3,16 +3,14 @@ import clientPromise from "../../lib/mongodb";
 export default async (req, res) => {
    try {
        const client = await clientPromise;
-       const db = client.db("sample_mflix");
+       const db = client.db("shoppingListDatabase");
 
-       const movies = await db
-           .collection("movies")
+       const items = await db
+           .collection("Items")
            .find({})
-           .sort({ metacritic: -1 })
-           .limit(10)
            .toArray();
 
-       res.json(movies);
+       res.json(items);
    } catch (e) {
        console.error(e);
    }
