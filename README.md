@@ -1,6 +1,7 @@
 ## Description of the app
 
-This is a shopping list app. The UI is an exact copy of the same app done through Mongoose and a server/client architecture. 
+This is a shopping list app. The UI is an exact copy of the same app done through Mongoose and a server/client architecture. The other app is found [in this repository](https://github.com/rghalayini/shoppingLst).
+This app has been rewritten in Next.js in order to be deployed on netlify or Vercel since they do not allow to deploy server/client architecture and onrender was very slow.
 The user can add items to the list, and delete them once they are purchased. It is created using Next.js and MongoDB.
 
 [Check it here](https://www.mongodb.com/) 
